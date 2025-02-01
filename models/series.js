@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const seriesSchema = new mongoose.Schema({
+    entry_id: Number,
     name: String,
     author: String,
     books: Array,
