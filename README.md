@@ -23,20 +23,20 @@
  * 
  * 
  * Requirements:
- *   -  5%  --> Use at least three different data collections within the database (such as users, posts, or comments).
+ *   ✔  5%  --> Use at least three different data collections within the database (such as users, posts, or comments).
  * 
- *   - 10%  --> Utilize reasonable data modeling practices.
+ *   ✔ 10%  --> Utilize reasonable data modeling practices.
  * 
- *   - 10%  --> Create GET routes for all data that should be exposed to the client, using appropriate query commands 
+ *   ✔ 10%  --> Create GET routes for all data that should be exposed to the client, using appropriate query commands 
  *              to retrieve the data from the database.
  * 
- *   - 10%  --> Create POST routes for data, as appropriate, using appropriate insertion commands to add data to the database. 
+ *   ✔ 10%  --> Create POST routes for data, as appropriate, using appropriate insertion commands to add data to the database. 
  *              At least one data collection should allow for client creation via a POST request.
  * 
- *   - 10%  --> Create PATCH or PUT routes for data, as appropriate, using appropriate update commands to change data in the database. 
+ *   ✔ 10%  --> Create PATCH or PUT routes for data, as appropriate, using appropriate update commands to change data in the database. 
  *              At least one data collection should allow for client manipulation via a PATCH or PUT request.
  * 
- *   - 10%  --> Create DELETE routes for data, as appropriate, using appropriate delete commands to remove data from the database. 
+ *   ✔ 10%  --> Create DELETE routes for data, as appropriate, using appropriate delete commands to remove data from the database. 
  *              At least one data collection should allow for client deletion via a DELETE request.
  * 
  *   -  5%  --> Include sensible indexes for any and all fields that are queried frequently. 
@@ -53,17 +53,17 @@
  *              Note: Double-check this requirement before submission. Testing your delete routes may leave you under the requirement. 
  *                    To be safe, populate your collections with sample data well above the requirement (we recommend 10-20 documents).
  * 
- *   -  5%  --> Utilize reasonable code organization practices.
+ *   ✔  5%  --> Utilize reasonable code organization practices.
  * 
  *   - 10%  --> Ensure that the program runs without errors (comment out things that do not work, and explain your blockers 
  *              - you can still receive partial credit).
  * 
- *   -  5%  --> Commit frequently to the git repository.
+ *   ✔  5%  --> Commit frequently to the git repository.
  * 
  *   -  5%  --> Include a README file that contains a description of your application.
  *              This README must include a description of your API's available routes and their corresponding CRUD operations for reference.
  * 
- *   -  5%  --> Level of effort displayed in creativity and user experience.
+ *   ✔  5%  --> Level of effort displayed in creativity and user experience.
  * 
  * 
  * Bonus Objectives:
