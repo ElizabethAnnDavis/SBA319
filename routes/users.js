@@ -10,14 +10,20 @@ router
         res.status(200).send(result);
     })
     .post(async(req, res) => {
-        let result = await User.findOne().sort({user_id: -1});
-        if(result){
-            req.body.user_id = result.user_id + 1;
-        }else{
-            req.body.user_id = 0;
+        try{
+            let result = await User.findOne().sort({user_id: -1});
+            if(result){
+                req.body.user_id = result.user_id + 1;
+            }else{
+                req.body.user_id = 0;
+            };
+            await User.create(req.body);
+            res.send("USER CREATED");
+        }catch(err){
+            if(err.name === "ValidationError"){
+                return res.status(400).send(err.message);
+            };
         };
-        await User.create(req.body);
-        res.send("USER CREATED");
     });
 
 router

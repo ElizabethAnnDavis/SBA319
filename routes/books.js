@@ -10,14 +10,20 @@ router
         res.status(200).send(result);
     })
     .post(async(req, res) => {
-        let result = await Book.findOne().sort({entry_id: -1});
-        if(result){
-            req.body.entry_id = result.entry_id + 1;
-        }else{
-            req.body.entry_id = 0;
+        try{
+            let result = await Book.findOne().sort({entry_id: -1});
+            if(result){
+                req.body.entry_id = result.entry_id + 1;
+            }else{
+                req.body.entry_id = 0;
+            };
+            await Book.create(req.body);
+            res.send("BOOK ADDED");
+        }catch(err){
+            if(err.name === "ValidationError"){
+                return res.status(400).send(err.message);
+            };
         };
-        await Book.create(req.body);
-        res.send("BOOK ADDED");
     });
 
 router
