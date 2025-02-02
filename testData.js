@@ -247,3 +247,8 @@ const series = [
         "classifiedAs": "Tetradecology"
     }    
 ];
+
+
+module.exports = users;
+module.exports = books;
+module.exports = series;
