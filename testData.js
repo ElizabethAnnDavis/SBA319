@@ -5,6 +5,11 @@
     "email": "someEmail@email.com",
     "favBooks": ["AGoT", "ACoK", "ASoS", "AFfC", "ADoD", "WoW", "ADoS"]
 }
+{
+    "name": "Lizzy",
+    "email": "anotherEmail@email.com",
+    "favBooks": ["AGoT", "ACoK", "ASoS", "AFfC", "ADoD"]
+}
 */
 
 /*

@@ -36,7 +36,13 @@ router
         };
     })
     .delete(async(req, res) => {
-    
+        const query = await User.findOne({user_id: req.params.id});
+        if(query){
+            await User.findOneAndDelete(query, req.body);
+            res.send(`USER ${req.params.id} DELETED`);
+        }else{
+            res.send(`User with id: ${req.params.id} not found.`);
+        };
     });
 
 
