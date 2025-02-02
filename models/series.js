@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const seriesSchema = new mongoose.Schema({
-    entry_id: Number,
-    name: String,
+    entry_id: {type: Number, required: true},
+    name: {type: String, required: true},
     author: String,
     books: Array,
     numOfBooks: Number,
@@ -32,6 +32,8 @@ A series of 18 books = Octodecology
 A series of 19 books = Nonodecology
 A series of 20 books = Icosology
 */
+
+seriesSchema.index({entry_id: 1});
 
 const Series = mongoose.model("Series", seriesSchema);
 module.exports = Series;

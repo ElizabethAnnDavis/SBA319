@@ -67,7 +67,7 @@
  * 
  * 
  * Bonus Objectives:
- *   - +1%  --> Use Mongoose to implement your application.
+ *   ✔ +1%  --> Use Mongoose to implement your application.
  *              Note: The validation requirements above must still be implemented database-side, 
  *                    but should also be implemented application-side within your Mongoose schema(s).
  * 
