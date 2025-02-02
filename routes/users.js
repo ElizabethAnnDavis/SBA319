@@ -23,10 +23,17 @@ router
 router
     .route('/:id')
     .get(async(req, res) => {
-    
+        const query = await User.findOne({user_id: req.params.id});
+        res.status(200).send(query);
     })
     .patch(async(req, res) => {
-    
+        const query = await User.findOne({user_id: req.params.id});
+        if(query){
+            await User.findOneAndUpdate(query, req.body);
+            res.send(req.body);
+        }else{
+            res.send(`User with id: ${req.params.id} not found.`);
+        };
     })
     .delete(async(req, res) => {
     
