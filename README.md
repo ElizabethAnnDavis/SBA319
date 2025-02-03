@@ -53,7 +53,7 @@
 - {
 -    "name": "Series Title", (required field),
 -    "author": "Author's Name",
--    "books": "Array" (required field)
+-    "books": "Array" (required field, min length 2)
 - }
 
  * Objectives:
