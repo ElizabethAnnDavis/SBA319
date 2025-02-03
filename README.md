@@ -9,11 +9,11 @@
 ##### POST new user:
 [NEW user (localhost:3000/users)]
 ###### INCLUDE:
-{
-    "name": "Users Name", (required field)
-    "email": "Users email@email.com"
+* {
+    "name": "Users Name" (required field),
+    "email": "Users email@email.com",
     "favBooks": Array
-}
+* }
 
 
 ##### GET specific user:
