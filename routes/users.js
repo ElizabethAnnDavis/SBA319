@@ -30,15 +30,25 @@ router
     .route('/:id')
     .get(async(req, res) => {
         const query = await User.findOne({user_id: req.params.id});
-        res.status(200).send(query);
-    })
-    .patch(async(req, res) => {
-        const query = await User.findOne({user_id: req.params.id});
         if(query){
-            await User.findOneAndUpdate(query, req.body);
-            res.send(req.body);
+            res.status(200).send(query);
         }else{
             res.send(`User with id: ${req.params.id} not found.`);
+        };
+    })
+    .patch(async(req, res) => {
+        try{
+            const query = await User.findOne({user_id: req.params.id});
+            if(query){
+                await User.findOneAndUpdate(query, req.body);
+                res.send(req.body);
+            }else{
+                res.send(`User with id: ${req.params.id} not found.`);
+            };
+        }catch(err){
+            if(err.name === "ValidationError"){
+                return res.status(400).send(err.message);
+            };
         };
     })
     .delete(async(req, res) => {

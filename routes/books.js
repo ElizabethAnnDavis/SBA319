@@ -29,13 +29,36 @@ router
 router
     .route('/:id')
     .get(async(req, res) => {
-
+        const query = await Book.findOne({entry_id: req.params.id});
+        if(query){
+            res.status(200).send(query);
+        }else{
+            res.send(`Book with id: ${req.params.id} not found.`);
+        };
     })
     .patch(async(req, res) => {
-
+        try{
+            const query = await Book.findOne({entry_id: req.params.id});
+            if(query){
+                await Book.findOneAndUpdate(query, req.body);
+                res.send(req.body);
+            }else{
+                res.send(`Book with id: ${req.params.id} not found.`);
+            };
+        }catch(err){
+            if(err.name === "ValidationError"){
+                return res.status(400).send(err.message);
+            };
+        };
     })
     .delete(async(req, res) => {
-
+        const query = await Book.findOne({entry_id: req.params.id});
+        if(query){
+            await Book.findOneAndDelete(query, req.body);
+            res.send(`BOOK ${req.params.id} DELETED`);
+        }else{
+            res.send(`Book with id: ${req.params.id} not found.`);
+        };
     });
 
 

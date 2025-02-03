@@ -20,7 +20,7 @@
 [SPECIFIC user (localhost:3000/users/:id)]
 
 ##### PATCH specific user:
-SPECIFIC user: localhost:3000/users/:id
+[SPECIFIC user (localhost:3000/users/:id)]
 ###### INCLUDE(any desired):
 * {
 * &nbsp;&nbsp;&nbsp;&nbsp; "name": "Users Name",
@@ -56,6 +56,25 @@ SPECIFIC user: localhost:3000/users/:id
 * &nbsp;&nbsp;&nbsp;&nbsp; "author": "Author's Name",
 * &nbsp;&nbsp;&nbsp;&nbsp; "books": "Array" (required field, min length 2)
 * }
+
+
+
+
+
+## Reflection (NOT Optional):
+ * What could you have done differently during the planning stages of your project to make the execution easier?
+ * --> Read through the requirements more thoroughly to ensure I created all the necessary files at the start of the process.
+
+ * Were there any requirements that were difficult to implement? What do you think would make them easier to implement in future projects?
+ * --> The "include sensible indexes" requirement didn't make much sense to me as I was under the impresssion that indexes were used on much larger data sets.
+
+ * What would you add to or change about your application if given more time?
+ * --> I would have added more routes and made the collections link to eachother if given more time.
+
+ * Use this space to make notes for your future self about anything that you think is important to remember about this process, or that may aid you when attempting something similar again:
+ * --> 1. Make sure exports are in the schemas
+ * --> 2. It gets confusing when there's multiple files with the same names
+ * --> 3. Things don't work when spelled incorrectly
 
 
 
@@ -108,19 +127,3 @@ SPECIFIC user: localhost:3000/users/:id
 ##### Bonus Objectives:
  *   ✔ +1%  --> Use Mongoose to implement your application.
  *              Note: The validation requirements above must still be implemented database-side, but should also be implemented application-side within your Mongoose schema(s).
-
-
-## Reflection (NOT Optional):
- * What could you have done differently during the planning stages of your project to make the execution easier?
- * --> Read through the requirements more thoroughly to ensure I created all the necessary files at the start of the process.
-
- * Were there any requirements that were difficult to implement? What do you think would make them easier to implement in future projects?
- * --> The "include sensible indexes" requirement didn't make much sense to me as I was under the impresssion that indexes were used on much larger data sets.
-
- * What would you add to or change about your application if given more time?
- * --> I would have added more routes and made the collections link to eachother if given more time.
-
- * Use this space to make notes for your future self about anything that you think is important to remember about this process, or that may aid you when attempting something similar again:
- * --> 1. Make sure exports are in the schemas
- * --> 2. It gets confusing when there's multiple files with the same names
- * --> 3. Things don't work when spelled incorrectly

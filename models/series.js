@@ -52,6 +52,43 @@ seriesSchema.pre('save', function(next) {
     next();
 });
 
+seriesSchema.pre('findOneAndUpdate', function(next) {
+    const update = this.getUpdate();
+    const books = update.books || this._conditions.books;
+
+    if (books) {
+        const bookCount = books.length;
+
+        const seriesTypes = {
+            2: 'Duology',
+            3: 'Trilogy',
+            4: 'Tetralogy',
+            5: 'Pentalogy',
+            6: 'Hexalogy',
+            7: 'Heptalogy',
+            8: 'Octology',
+            9: 'Ennealogy',
+            10: 'Decology',
+            11: 'Undecology',
+            12: 'Dodecology',
+            13: 'Tridecology',
+            14: 'Tetradecology',
+            15: 'Pentadecology',
+            16: 'Hexadecology',
+            17: 'Heptadecology',
+            18: 'Octodecology',
+            19: 'Nonodecology',
+            20: 'Icosology'
+        };
+
+        update.classifiedAs = seriesTypes[bookCount] || 'Unknown';
+        update.numOfBooks = bookCount;
+    }
+
+    next();
+});
+
+
 seriesSchema.index({entry_id: 1});
 
 const Series = mongoose.model("Series", seriesSchema);
