@@ -16,9 +16,7 @@ const seriesSchema = new mongoose.Schema({
     },
     numOfBooks: Number,
     classifiedAs: String, 
-},
-{ versionKey: false }
-);
+}, { versionKey: false });
 
 seriesSchema.pre('save', function(next) {
     const bookCount = this.books.length;
@@ -55,6 +53,10 @@ seriesSchema.pre('save', function(next) {
 seriesSchema.pre('findOneAndUpdate', function(next) {
     const update = this.getUpdate();
     const books = update.books || this._conditions.books;
+
+    if (books && books.length < 2) {
+        return next(new Error('The books array must contain at least 2 items.'));
+    };
 
     if (books) {
         const bookCount = books.length;

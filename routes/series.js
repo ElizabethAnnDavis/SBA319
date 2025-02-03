@@ -44,6 +44,14 @@ router
         try{
             const query = await Series.findOne({entry_id: req.params.id});
             if(query){
+                if (req.body.books && req.body.books.length < 2) {
+                    return res.status(400).send('The books array must contain at least 2 items.');
+                };
+                
+                if (req.body.name.trim().length === 0) {
+                    return res.status(400).send('The name cannot be an empty string.');
+                };
+
                 await Series.findOneAndUpdate(
                     { entry_id: req.params.id },
                     req.body,

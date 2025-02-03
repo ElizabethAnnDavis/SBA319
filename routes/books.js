@@ -40,6 +40,10 @@ router
         try{
             const query = await Book.findOne({entry_id: req.params.id});
             if(query){
+                if (req.body.name.trim().length === 0) {
+                    return res.status(400).send('The name cannot be an empty string.');
+                };
+                
                 await Book.findOneAndUpdate(query, req.body);
                 res.send(req.body);
             }else{
