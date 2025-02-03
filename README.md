@@ -20,7 +20,7 @@
 [SPECIFIC user (localhost:3000/users/:id)]
 
 ##### PATCH specific user:
-[SPECIFIC user (localhost:3000/users/:id)]
+[ SPECIFIC user localhost:3000/users/:id ]
 ###### INCLUDE(any desired):
 * {
 * &nbsp;&nbsp;&nbsp;&nbsp; "name": "Users Name",
@@ -107,8 +107,7 @@
 
 ##### Bonus Objectives:
  *   ✔ +1%  --> Use Mongoose to implement your application.
- *              Note: The validation requirements above must still be implemented database-side, 
- *                    but should also be implemented application-side within your Mongoose schema(s).
+ *              Note: The validation requirements above must still be implemented database-side, but should also be implemented application-side within your Mongoose schema(s).
 
 
 ## Reflection (NOT Optional):
