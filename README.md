@@ -1,7 +1,7 @@
 
- # SBA 319: MongoDB Database Application ✔
+# SBA 319: MongoDB Database Application ✔
 
- ### Documentation:
+### Documentation:
 #### USERS
 ##### GET all users:
 [All users (localhost:3000/users)]
@@ -13,6 +13,11 @@
 -    "name": "Users Name", (required field)
 -    "email": "Users email@email.com"
 -    "favBooks": Array
+- }
+- {
+-    "name": "Users Name" (required field),
+-    "email": "Users email@email.com",
+-    "favBooks": "Array"
 - }
 
 ##### GET specific user:
@@ -56,7 +61,11 @@
 -    "books": "Array" (required field, min length 2)
 - }
 
- * Objectives:
+
+
+
+
+### Objectives:
  * - Create a server application with Node, Express, and MongoDB.
  * - Create a CRUD API using Express and MongoDB.
  * - Create MongoDB indexes.
@@ -65,7 +74,7 @@
  * - Use MongoDB validation to ensure data consistency.
 
 
- * Instructions:
+### Instructions:
  * You will create a small Node, Express, and MongoDB server application. 
  * The topic and content of this application is entirely up to you; be creative!
  * 
@@ -77,7 +86,7 @@
  * you can get done in a specific allotment of time if you were to be asked to do something similar in the future.
 
 
- * Requirements:
+### Requirements:
  *   ✔  5%  --> Use at least three different data collections within the database (such as users, posts, or comments).
  * 
  *   ✔ 10%  --> Utilize reasonable data modeling practices.
@@ -94,7 +103,7 @@
  *   ✔ 10%  --> Create DELETE routes for data, as appropriate, using appropriate delete commands to remove data from the database. 
  *              At least one data collection should allow for client deletion via a DELETE request.
  * 
- *   -  5%  --> Include sensible indexes for any and all fields that are queried frequently. 
+ *   ✔  5%  --> Include sensible indexes for any and all fields that are queried frequently. 
  *              For fields that may have a high write-to-read ratio, you may forgo indexes for performance considerations. 
  *              Make comments of this where applicable.
  * 
@@ -115,7 +124,7 @@
  * 
  *   ✔  5%  --> Commit frequently to the git repository.
  * 
- *   -  5%  --> Include a README file that contains a description of your application.
+ *   ✔  5%  --> Include a README file that contains a description of your application.
  *              This README must include a description of your API's available routes and their corresponding CRUD operations for reference.
  * 
  *   ✔  5%  --> Level of effort displayed in creativity and user experience.
@@ -127,9 +136,18 @@
  *                    but should also be implemented application-side within your Mongoose schema(s).
 
 
- * Reflection (NOT Optional):
+## Reflection (NOT Optional):
  * - What could you have done differently during the planning stages of your project to make the execution easier?
+ * --> Read through the requirements more thoroughly to ensure I created all the necessary files at the start of the process.
+
  * - Were there any requirements that were difficult to implement? What do you think would make them easier to implement in future projects?
+ * --> The "include sensible indexes" requirement didn't make much sense to me as I was under the impresssion that indexes were used on much larger data sets.
+
  * - What would you add to or change about your application if given more time?
+ * --> I would have added more routes and made the collections link to eachother if given more time.
+
  * - Use this space to make notes for your future self about anything that you think is important to remember about this process, 
  *   or that may aid you when attempting something similar again:
+ * --> 1. Make sure exports are in the schemas
+ * --> 2. It gets confusing when there's multiple files with the same names
+ * --> 3. Things don't work when spelled incorrectly
