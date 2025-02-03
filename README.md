@@ -20,7 +20,7 @@
 [SPECIFIC user (localhost:3000/users/:id)]
 
 ##### PATCH specific user:
-[ SPECIFIC user localhost:3000/users/:id ]
+SPECIFIC user: localhost:3000/users/:id
 ###### INCLUDE(any desired):
 * {
 * &nbsp;&nbsp;&nbsp;&nbsp; "name": "Users Name",
