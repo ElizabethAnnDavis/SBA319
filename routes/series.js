@@ -17,6 +17,9 @@ router
             }else{
                 req.body.entry_id = 0;
             };
+            if(req.body.books.length > 1){
+                req.body.numOfBooks = req.body.books.length
+            }
             await Series.create(req.body);
             res.send("SERIES ADDED");
         }catch(err){

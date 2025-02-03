@@ -1,6 +1,61 @@
 
- * SBA 319: MongoDB Database Application ✔
- * 
+ # SBA 319: MongoDB Database Application ✔
+
+ ### Documentation:
+#### USERS
+##### GET all users:
+[All users (localhost:3000/users)]
+
+##### POST new user:
+[NEW user (localhost:3000/users)]
+###### INCLUDE:
+- {
+-    "name": "Users Name", (required field)
+-    "email": "Users email@email.com"
+-    "favBooks": Array
+- }
+
+##### GET specific user:
+[SPECIFIC user (localhost:3000/users/:id)]
+
+##### PATCH specific user:
+[SPECIFIC user (localhost:3000/users/:id)]
+###### INCLUDE(any desired):
+- {
+-    "name": "Users Name",
+-    "email": "Users email@email.com"
+-    "favBooks": Array
+- }
+
+##### DELETE specific user:
+[SPECIFIC user (localhost:3000/users/:id)]
+
+#### BOOKS
+##### GET all books:
+[All posts (localhost:3000/books)]
+
+##### POST new book:
+[NEW post (localhost:3000/books)]
+###### INCLUDE:
+- {
+-    "name": "Book Title", (required field),
+-    "author": "Author's Name",
+-    "inSeries": "Boolean"
+- }
+
+#### SERIES
+##### GET all series:
+[All comments (localhost:3000/series)]
+
+##### POST new series:
+[NEW comment (localhost:3000/series)]
+###### INCLUDE:
+- {
+-    "name": "Series Title", (required field),
+-    "author": "Author's Name",
+-    "books": "Array" (required field)
+- }
+
  * Objectives:
  * - Create a server application with Node, Express, and MongoDB.
  * - Create a CRUD API using Express and MongoDB.
@@ -8,8 +63,8 @@
  * - Use MongoDB indexing to make efficient queries.
  * - Create MongoDB validation rules.
  * - Use MongoDB validation to ensure data consistency.
- * 
- * 
+
+
  * Instructions:
  * You will create a small Node, Express, and MongoDB server application. 
  * The topic and content of this application is entirely up to you; be creative!
@@ -20,8 +75,8 @@
  * Keep things simple. Like most projects you will encounter, you should finish the absolute minimum requirements first, 
  * and then add additional features and complexity if you have the time to do so. This will also help you understand what 
  * you can get done in a specific allotment of time if you were to be asked to do something similar in the future.
- * 
- * 
+
+
  * Requirements:
  *   ✔  5%  --> Use at least three different data collections within the database (such as users, posts, or comments).
  * 
@@ -70,8 +125,8 @@
  *   ✔ +1%  --> Use Mongoose to implement your application.
  *              Note: The validation requirements above must still be implemented database-side, 
  *                    but should also be implemented application-side within your Mongoose schema(s).
- * 
- * 
+
+
  * Reflection (NOT Optional):
  * - What could you have done differently during the planning stages of your project to make the execution easier?
  * - Were there any requirements that were difficult to implement? What do you think would make them easier to implement in future projects?

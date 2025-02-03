@@ -4,34 +4,53 @@ const seriesSchema = new mongoose.Schema({
     entry_id: {type: Number, required: true},
     name: {type: String, required: true},
     author: String,
-    books: Array,
+    books: { 
+        type: Array, 
+        required: true,
+        validate: {
+            validator: function(v) {
+                return v.length >= 2;
+            },
+            message: 'The books array must contain at least 2 items.'
+        }
+    },
     numOfBooks: Number,
     classifiedAs: String, 
 },
 { versionKey: false }
 );
 
-/*
-A series of 2 books = Duology
-A series of 3 books = Trilogy
-A series of 4 books = Tetralogy
-A series of 5 books = Pentalogy
-A series of 6 books = Hexalogy
-A series of 7 books = Heptalogy
-A series of 8 books = Octology
-A series of 9 books = Ennealogy
-A series of 10 books = Decology
-A series of 11 books = Undecology
-A series of 12 books = Dodecology
-A series of 13 books = Tridecology
-A series of 14 books = Tetradecology
-A series of 15 books = Pentadecology
-A series of 16 books = Hexadecology
-A series of 17 books = Heptadecology
-A series of 18 books = Octodecology
-A series of 19 books = Nonodecology
-A series of 20 books = Icosology
-*/
+seriesSchema.pre('save', function(next) {
+    const bookCount = this.books.length;
+
+    const seriesTypes = {
+        2: 'Duology',
+        3: 'Trilogy',
+        4: 'Tetralogy',
+        5: 'Pentalogy',
+        6: 'Hexalogy',
+        7: 'Heptalogy',
+        8: 'Octology',
+        9: 'Ennealogy',
+        10: 'Decology',
+        11: 'Undecology',
+        12: 'Dodecology',
+        13: 'Tridecology',
+        14: 'Tetradecology',
+        15: 'Pentadecology',
+        16: 'Hexadecology',
+        17: 'Heptadecology',
+        18: 'Octodecology',
+        19: 'Nonodecology',
+        20: 'Icosology'
+    };
+
+    this.classifiedAs = seriesTypes[bookCount] || 'Unknown';
+
+    this.numOfBooks = bookCount;
+
+    next();
+});
 
 seriesSchema.index({entry_id: 1});
 
