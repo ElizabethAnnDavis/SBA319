@@ -15,7 +15,6 @@
 * &nbsp;&nbsp;&nbsp;&nbsp; "favBooks": Array
 * }
 
-
 ##### GET specific user:
 [SPECIFIC user (localhost:3000/users/:id)]
 
@@ -31,12 +30,13 @@
 ##### DELETE specific user:
 [SPECIFIC user (localhost:3000/users/:id)]
 
+
 #### BOOKS
 ##### GET all books:
-[All posts (localhost:3000/books)]
+[All books (localhost:3000/books)]
 
 ##### POST new book:
-[NEW post (localhost:3000/books)]
+[NEW book (localhost:3000/books)]
 ###### INCLUDE:
 * {
 * &nbsp;&nbsp;&nbsp;&nbsp; "name": "Book Title", (required field),
@@ -44,12 +44,28 @@
 * &nbsp;&nbsp;&nbsp;&nbsp; "inSeries": "Boolean"
 * }
 
+##### GET specific book by ID:
+[SPECIFIC book (localhost:3000/books/:id)]
+
+##### PATCH specific book by ID:
+[SPECIFIC book (localhost:3000/books/:id)]
+###### INCLUDE(any desired):
+* {
+* &nbsp;&nbsp;&nbsp;&nbsp; "name": "Book Title", (required field),
+* &nbsp;&nbsp;&nbsp;&nbsp; "author": "Author's Name",
+* &nbsp;&nbsp;&nbsp;&nbsp; "inSeries": "Boolean"
+* }
+
+##### DELETE specific book by ID:
+[SPECIFIC book (localhost:3000/books/:id)]
+
+
 #### SERIES
 ##### GET all series:
-[All comments (localhost:3000/series)]
+[All series (localhost:3000/series)]
 
 ##### POST new series:
-[NEW comment (localhost:3000/series)]
+[NEW series (localhost:3000/series)]
 ###### INCLUDE:
 * {
 * &nbsp;&nbsp;&nbsp;&nbsp; "name": "Series Title", (required field),
@@ -57,7 +73,20 @@
 * &nbsp;&nbsp;&nbsp;&nbsp; "books": "Array" (required field, min length 2)
 * }
 
+##### GET specific series by ID:
+[SPECIFIC series (localhost:3000/series/:id)]
 
+##### PATCH specific series by ID:
+[SPECIFIC series (localhost:3000/series/:id)]
+###### INCLUDE(any desired):
+* {
+* &nbsp;&nbsp;&nbsp;&nbsp; "name": "Series Title", (required field),
+* &nbsp;&nbsp;&nbsp;&nbsp; "author": "Author's Name",
+* &nbsp;&nbsp;&nbsp;&nbsp; "books": "Array" (required field, min length 2)
+* }
+
+##### DELETE specific series by ID:
+[SPECIFIC series (localhost:3000/series/:id)]
 
 
 
